@@ -1,18 +1,3 @@
-// Copyright (c) 2025 Barcelona Supercomputing Center
-// Licensed under the Solderpad Hardware License, Version 0.51 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at:
-//
-//     http://solderpad.org/licenses/SHL-0.51/
-//
-// Unless required by applicable law or agreed to in writing, software,
-// hardware and materials distributed under this License are distributed
-// on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-// either express or implied. See the License for the specific language
-// governing permissions and limitations under the License.
-//
-// SPDX-License-Identifier: SHL-0.51
-
 #ifndef KERNEL_HPP
 #define KERNEL_HPP
 
@@ -50,6 +35,14 @@
 #define KYBER_ETA1 3
 #define KYBER_POLYCOMPRESSEDBYTES    128
 #define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 320)
+#elif KYBER_K == 3
+#define KYBER_ETA1 2
+#define KYBER_POLYCOMPRESSEDBYTES    128
+#define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 320)
+#else // KYBER_K == 4
+#define KYBER_ETA1 2
+#define KYBER_POLYCOMPRESSEDBYTES    160
+#define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 352)
 #endif
 
 #define KYBER_ETA2 2

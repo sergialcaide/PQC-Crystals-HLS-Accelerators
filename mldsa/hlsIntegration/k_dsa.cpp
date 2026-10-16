@@ -1,18 +1,3 @@
-// Copyright (c) 2025 Barcelona Supercomputing Center
-// Licensed under the Solderpad Hardware License, Version 0.51 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at:
-//
-//     http://solderpad.org/licenses/SHL-0.51/
-//
-// Unless required by applicable law or agreed to in writing, software,
-// hardware and materials distributed under this License are distributed
-// on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-// either express or implied. See the License for the specific language
-// governing permissions and limitations under the License.
-//
-// SPDX-License-Identifier: SHL-0.51
-
 #include "kernel.hpp"
 const unsigned int paramk = K;
 const unsigned int paraml = L;
@@ -3066,7 +3051,7 @@ readmemVer(s_mu_1, mu_1, CRHBYTES);
 repeatg<CRHBYTES>(s_mu_1_r, s_mu_1);
 shake_mu_p(s_sig, s_mu_1_r, s_p); //check how to share all shakes
 
-duplicateVer(s_sig_0, s_sig_1, s_sig, SEEDBYTES);
+duplicateVer(s_sig_0, s_sig_1, s_sig, CTILDEBYTES);
 
 challengeVer(s_cp, s_sig_0, s_signal_ch);
 nttVer(s_cp_t, s_cp, 1);
